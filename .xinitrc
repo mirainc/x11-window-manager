@@ -14,6 +14,7 @@ echo "STARTING X"
 # allow X-windows apps access for *any* user on the system
 xhost +SI:localuser:chrome
 
-xterm &
+# xterm &
+xterm -geometry 960x1080-0+0 -fg black -bg white &
 # launch chrome
-runuser -l chrome -c "DISPLAY=$DISPLAY /usr/bin/google-chrome"
+runuser -l chrome -c "DISPLAY=$DISPLAY /usr/bin/google-chrome --no-first-run --window-size=960,1080"
