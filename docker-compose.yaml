@@ -1,0 +1,13 @@
+version: '2'
+services:
+  main:
+    build: ./
+    restart: always
+    privileged: true
+    labels:
+      io.resin.features.dbus: '1'
+    environment:
+      - UDEV=1
+    ## ======= Uncomment these for local testing =======
+      # - DISPLAY=host.docker.internal:0
+      # - UDEV=0
