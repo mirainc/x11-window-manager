@@ -4,11 +4,13 @@ services:
     build: ./
     restart: always
     privileged: true
-    command: ["sleep", "infinity"]
+    # command: ["sleep", "infinity"]
     labels:
       io.resin.features.dbus: '1'
     environment:
       - UDEV=1
-    ## ======= Uncomment these for local testing =======
+    ## ======= Uncomment these for local Docker testing. =======
+    ##         On Mac, make sure you have XQuartz
+    ##         running and have run `xhost +`.
       # - DISPLAY=host.docker.internal:0
       # - UDEV=0
