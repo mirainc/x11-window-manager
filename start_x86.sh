@@ -5,7 +5,7 @@ if [[ -z "$DISPLAY" ]]; then
 fi
 
 if [[ "$DISPLAY" == "host.docker.internal:0" && "$UDEV" -eq 0 ]]; then
-    bash .xinitrc
+    bash /usr/src/app/.xinitrc
 else
-    startx .xinitrc
+    startx /usr/src/app/.xinitrc
 fi
