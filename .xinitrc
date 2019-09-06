@@ -14,7 +14,15 @@ echo "STARTING X"
 # allow X-windows apps access for *any* user on the system
 xhost +SI:localuser:chrome
 
+if [[ -z "MODE" ]]; then
+    MODE="1920x1080"
+fi
+if [[ -z "OUTPUT" ]]; then
+    OUTPUT="HDMI2"
+fi
+xrandr --output $OUTPUT --mode $MODE
+
 # xterm &
-xterm -geometry 960x1080-0+0 -fg black -bg white &
+xterm -geometry 80x40-0+0 -fg black -bg white -fn 10x20 &
 # launch chrome
-runuser -l chrome -c "DISPLAY=$DISPLAY /usr/bin/google-chrome --no-first-run --window-size=960,1080"
+runuser -l chrome -c "DISPLAY=$DISPLAY /usr/bin/google-chrome --no-first-run --window-size=1280,1080"
