@@ -9,6 +9,11 @@ RUN install_packages xserver-xorg=1:7.7+19 \
   x11-xserver-utils \
   dbus-x11 \
   matchbox-keyboard \
+  # Intel Compute Stick drivers
+  libegl1-mesa \
+  libegl1-mesa-drivers \
+  libgl1-mesa-dri \
+  libgl1-mesa-glx \
   xterm
 
 # Install Chrome
