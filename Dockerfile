@@ -43,6 +43,8 @@ RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
 WORKDIR /usr/src/app
 
 COPY . ./
+RUN chmod +x /usr/src/app/chrome.sh
+RUN ln -s /usr/src/app/chrome.sh /root/Desktop/chrome.sh
 
 # Avoid requesting XFCE4 question on X start
 ENV XFCE_PANEL_MIGRATE_DEFAULT=1
