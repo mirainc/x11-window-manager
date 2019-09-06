@@ -35,9 +35,9 @@ RUN groupadd -r chrome && useradd -r -g chrome -G audio,video chrome \
 #USER chrome
 
 # Disable screen from turning it off
-#RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
-#  && echo "" >> /etc/X11/xinit/xserverrc \
-#  && echo 'exec /usr/bin/X -s 0 dpms' >> /etc/X11/xinit/xserverrc
+RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
+ && echo "" >> /etc/X11/xinit/xserverrc \
+ && echo 'exec /usr/bin/X -s 0 dpms' >> /etc/X11/xinit/xserverrc
 
 # Setting working directory
 WORKDIR /usr/src/app
