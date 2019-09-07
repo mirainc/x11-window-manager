@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 
-export DISPLAY=:0.0
+if [[ -z "$DISPLAY" ]]; then
+    export DISPLAY=:0.0
+fi
+
 export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 # rotate screen if env variable is set [normal, inverted, left or right]
@@ -11,10 +14,13 @@ fi
 
 # start desktop manager
 echo "STARTING X"
-# startx
 
-# uncomment to start x without mouse cursor
-# startx -- -nocursor
+# allow X-windows apps access for *any* user on the system
+xhost +SI:localuser:chrome
 
-# uncomment to open an application instead of the desktop
-startx xterm
+if [[ "$DISPLAY" == "host.docker.internal:0" && "$UDEV" -eq 0 ]]; then
+    xterm &
+    bash ./chrome.sh
+else
+    startx
+fi
