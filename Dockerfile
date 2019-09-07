@@ -44,6 +44,7 @@ WORKDIR /usr/src/app
 
 COPY . ./
 RUN chmod +x /usr/src/app/chrome.sh
+RUN mkdir -p /root/Desktop
 RUN ln -s /usr/src/app/chrome.sh /root/Desktop/chrome.sh
 
 # Avoid requesting XFCE4 question on X start
