@@ -14,6 +14,10 @@ RUN install_packages xserver-xorg=1:7.7+19 \
   libegl1-mesa-drivers \
   libgl1-mesa-dri \
   libgl1-mesa-glx \
+  # LTE utilities
+  libqmi-utils \
+  udhcpc \
+  # Other utilities
   xterm
 
 # Install Chrome

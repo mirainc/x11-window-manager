@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+source ./setup_lte.sh
+
 if [[ -z "$DISPLAY" ]]; then
     export DISPLAY=:0.0
 fi
