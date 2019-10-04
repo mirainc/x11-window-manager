@@ -21,6 +21,6 @@ if [[ "$DISPLAY" == "host.docker.internal:0" && "$UDEV" -eq 0 ]]; then
     bash ./chrome.sh
 else
     echo "STARTING X"
-    startx &
-    source ./setup_lte.sh
+    source ./setup_lte.sh &
+    startx
 fi
