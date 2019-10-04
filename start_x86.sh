@@ -3,7 +3,7 @@
 source ./setup_lte.sh
 
 if [[ -z "$DISPLAY" ]]; then
-    export DISPLAY=:0.0
+    export DISPLAY=:0
 fi
 
 export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
@@ -18,7 +18,7 @@ fi
 echo "STARTING X"
 
 # allow X-windows apps access for *any* user on the system
-xhost +SI:localuser:chrome
+# xhost +SI:localuser:chrome
 
 if [[ "$DISPLAY" == "host.docker.internal:0" && "$UDEV" -eq 0 ]]; then
     xterm &
