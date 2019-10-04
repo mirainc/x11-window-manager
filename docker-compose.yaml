@@ -4,6 +4,7 @@ services:
     build: ./
     restart: always
     privileged: true
+    network_mode: "host"
     # command: ["sleep", "infinity"]
     labels:
       io.resin.features.dbus: '1'
