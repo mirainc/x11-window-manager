@@ -15,15 +15,13 @@ if [[ ! -z "$ROTATE_DISPLAY" ]]; then
 fi
 
 # start desktop manager
-echo "STARTING X"
-
-# allow X-windows apps access for *any* user on the system
-# not required anymore?
-xhost +SI:localuser:chrome
 
 if [[ "$DISPLAY" == "host.docker.internal:0" && "$UDEV" -eq 0 ]]; then
+    # allow X-windows apps access for *any* user on the system
+    xhost +SI:localuser:chrome
     xterm &
     bash ./chrome.sh
 else
+    echo "STARTING X"
     startx
 fi
