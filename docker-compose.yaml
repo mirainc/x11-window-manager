@@ -7,6 +7,8 @@ services:
     # command: ["sleep", "infinity"]
     labels:
       io.resin.features.dbus: '1'
+      io.resin.features.kernel-modules: '1'
+      io.resin.features.firmware: '1'
     environment:
       - UDEV=1
     ## ======= Uncomment these for local Docker testing. =======
